@@ -29,7 +29,7 @@ export default function Section13Freedom() {
                         Feel The Freedom
                     </Heading2>
                     <p className="text-brand-logo font-Black text-2xl self-end">
-                        It's a no brainer
+                        It&apos;s a no brainer
                     </p>
                 <div className="flex w-full justify-start items-end mt-16">
                     <div className="flex flex-col lg:gap-4">

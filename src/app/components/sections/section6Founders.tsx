@@ -47,7 +47,7 @@ export default function Section6Founders() {
                     <div className="my-12 w-full flex flex-col items-center">
                         <Heading5 className="text-center text-brand-cream mb-4 ">
                             Curious if Sloane is right for you?<br></br>
-                            Let's figure it out together
+                            Let&apos;s figure it out together
                         </Heading5>
                         <Button2 
                             title="Book a 15 Min Call"
