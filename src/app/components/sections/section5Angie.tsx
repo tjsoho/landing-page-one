@@ -36,7 +36,7 @@ export default function Section5Angie() {
                     <div className='flex justify-end items-end'>
                         <div className="px-4 w-full pt-[220px]">
                             <BodyText className="font-bold">
-                                "I've tried numerous AI tools, but Sloane stands out with its intuitively designed dashboard. The categories for each section make it a game changer, perfectly aligning with how I think. Highly user-friendly and effective, Sloane has truly transformed my creative process."
+                                &quot;I&apos;ve tried numerous AI tools, but Sloane stands out with its intuitively designed dashboard. The categories for each section make it a game changer, perfectly aligning with how I think. Highly user-friendly and effective, Sloane has truly transformed my creative process.&quot;    
                             </BodyText>
                             <SmallText className='my-2'>Angie Starr, The Mini Course Method</SmallText>
                         </div>
@@ -52,7 +52,7 @@ export default function Section5Angie() {
                     <div className='flex justify-end items-end'>
                         <div className="px-4 w-1/2 ">
                             <BodyText className="font-bold">
-                                "I've tried numerous AI tools, but Sloane stands out with its intuitively designed dashboard. The categories for each section make it a game changer, perfectly aligning with how I think. Highly user-friendly and effective, Sloane has truly transformed my creative process."
+                                &quot;I&apos;ve tried numerous AI tools, but Sloane stands out with its intuitively designed dashboard. The categories for each section make it a game changer, perfectly aligning with how I think. Highly user-friendly and effective, Sloane has truly transformed my creative process.&quot;
                             </BodyText>
                             <SmallText className='my-2'>Angie Starr, The Mini Course Method</SmallText>
                         </div>

@@ -2,10 +2,9 @@
 IMPORTS
 ***************************************************/
 import Image from 'next/image';
-import { Heading3, Heading4, Heading5 } from '../ui/Typography';
+import { Heading3, Heading5 } from '../ui/Typography';
 
 import Button2 from '../ui/Button2';
-import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 
 /**************************************************
 TYPES & INTERFACES

@@ -2,7 +2,7 @@
 IMPORTS
 ***************************************************/
 
-import { Heading3, Heading4, Heading5, SmallText } from "../ui/Typography";
+import { Heading4, SmallText } from "../ui/Typography";
 
 
 /**************************************************
