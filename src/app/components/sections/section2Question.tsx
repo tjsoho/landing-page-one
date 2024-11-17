@@ -5,7 +5,7 @@
 ***************************************************/
 
 import { FaCircleArrowRight } from "react-icons/fa6";
-import { BodyText, Heading2, Heading3, SmallText } from "../ui/Typography";
+import { BodyText, Heading2, Heading3 } from "../ui/Typography";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import Button2 from "../ui/Button2";
 import Script from 'next/script';
@@ -17,10 +17,10 @@ const CalendlyButton = () => {
     const openCalendlyModal = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         
-        // @ts-ignore
+        // @ts-expect-error Calendly is added via external script
         if (typeof window !== 'undefined' && window.Calendly) {
             try {
-                // @ts-ignore
+                // @ts-expect-error Calendly is added via external script
                 window.Calendly.initPopupWidget({
                     url: 'https://calendly.com/sloane-bookings/sloane-phone-call',
                     prefill: {},
@@ -106,7 +106,7 @@ export default function Section2Question() {
                                 <BodyText>Welcome to Your First Step to Effortless AI. </BodyText>
                                 <BodyText>Unlike generic AI tools, Sloane offers a deeply personalised experience—adapting, evolving, and growing right alongside your business.
                                 </BodyText>
-                                <BodyText>Starting with Sloane means you're not just signing up for technology; you're gaining partners who prioritize real human connections.</BodyText>
+                                <BodyText>Starting with Sloane means you&apos;re not just signing up for technology; you&apos;re gaining partners who prioritize real human connections.</BodyText>
                             </div>
                             <CalendlyButton />
                         </div>

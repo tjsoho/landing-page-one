@@ -19,10 +19,10 @@ const CalendlyButton = () => {
     const openCalendlyModal = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         
-        // @ts-ignore
+        // @ts-expect-error Calendly is added via external script
         if (typeof window !== 'undefined' && window.Calendly) {
             try {
-                // @ts-ignore
+                // @ts-expect-error Calendly is added via external script
                 window.Calendly.initPopupWidget({
                     url: 'https://calendly.com/sloane-bookings/sloane-phone-call',
                     prefill: {},
