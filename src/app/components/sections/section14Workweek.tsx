@@ -1,17 +1,33 @@
+'use client'
+
 /**************************************************
     IMPORTS
 ***************************************************/
 import { Heading2, Heading4 } from '../ui/Typography';
 import Button2 from '../ui/Button2';
-import { BsArrowRightCircle } from 'react-icons/bs';
-
-/**************************************************
-    TYPES & INTERFACES
-***************************************************/
+import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 
 /**************************************************
     COMPONENT CODE
 ***************************************************/
+const UserFormButton = () => {
+    const handleRedirect = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        window.open('https://app.sloane.biz/userform', '_blank');
+    };
+
+    return (
+        <Button2 
+            title="GET STARTED"
+            icon={<BsFillArrowRightCircleFill size={24} />}
+            textColor="text-brand-logo"
+            textHoverColor="hover:text-brand-green"
+            backgroundColor="bg-brand-green"
+            hoverBG="hover:bg-brand-logo"
+            onClick={handleRedirect}
+        />
+    );
+};
 
 /**************************************************
     RENDER COMPONENT
@@ -23,7 +39,7 @@ export default function Section14Workweek() {
                 {/* **************************************************    1st ROW    ************************************************** */}
                 <div className="mb-8">
                     <Heading2 className="text-left text-brand-green">
-                    Ready to redefine <br></br> your workweek?
+                        Ready to redefine <br></br> your workweek?
                     </Heading2>
                 </div>
 
@@ -37,14 +53,7 @@ export default function Section14Workweek() {
                     </div>
                 </div>
                 <div className="flex justify-center lg:justify-end items-center mt-8">
-                    <Button2 
-                        title="START TODAY"
-                        icon={<BsArrowRightCircle size={24} />}
-                        textColor="text-brand-cream"
-                        textHoverColor="hover:text-gray-100"
-                        backgroundColor="bg-brand-green"
-                        hoverBG="hover:bg-brand-green-dark"
-                    />
+                    <UserFormButton />
                 </div>
             </div>
         </section>

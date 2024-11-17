@@ -14,6 +14,25 @@ import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 /**************************************************
     COMPONENT CODE
 ***************************************************/
+const UserFormButton = () => {
+    const handleRedirect = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        window.open('https://app.sloane.biz/userform', '_blank');
+    };
+
+    return (
+        <Button2 
+            title="GET STARTED"
+            icon={<BsFillArrowRightCircleFill size={24} />}
+            textColor="text-brand-green"
+            textHoverColor="hover:text-brand-logo"
+            backgroundColor="bg-brand-logo"
+            hoverBG="hover:bg-brand-green"
+            onClick={handleRedirect}
+        />
+    );
+};
+
 const ResponsiveHeading = () => {
     const [isXlScreen, setIsXlScreen] = useState(false);
 
@@ -92,24 +111,17 @@ export default function Section11Chani() {
                         <SmallText className="text-black text-lg w-3/5">
                         Before I met Sloane, I was on the verge of hiring a VA, which would have cost a fortune in time and money. Now, with Sloane&apos;s capabilities stretching across all my business needs, I&apos;m saving more than just dollars— I&apos;m reclaiming my time. It&apos;s like having a VA 24/7, but at a fraction of the cost. Bye-bye, payroll worries; hello, efficiency!
                         </SmallText>
-                    <div className="absolute 2xl:-bottom-8 2xl:right-[38%] xl:right-[40%] xl:bottom-10">
+                    <div className="absolute 2xl:-bottom-24 2xl:right-[38%] xl:right-[40%] xl:-bottom-8">
                         <Image src="/images/shani.png" alt="Chanin" width={370} height={300} className='rounded-2xl xl:w-[300px] 2xl:w-[370px]'/>
                     </div>
                     </div>
                 </div>
-                <div className="flex justify-center items-center mt-16">
-                    <SmallText>Chani Peach - Author & Business Energy Coach</SmallText>
+                <div className="flex justify-center items-center mt-32">
+                    <SmallText className='font-italic'>Chani Peach - Author & Business Energy Coach</SmallText>
                 </div>
             </div>
             <div className="flex justify-center items-center mt-8">
-                <Button2 
-                        title="GET STARTED"
-                        icon={<BsFillArrowRightCircleFill size={24} />}
-                        textColor="text-brand-green"
-                        textHoverColor="hover:text-brand-logo"
-                        backgroundColor="bg-brand-logo"
-                        hoverBG="hover:bg-brand-green"
-                />
+                <UserFormButton />
             </div>
         </section>
     );

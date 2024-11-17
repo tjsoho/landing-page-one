@@ -1,22 +1,38 @@
+'use client'
+
 /**************************************************
 IMPORTS
 ***************************************************/
-
 import Button2 from "../ui/Button2";
 import { Heading1, Heading2 } from "../ui/Typography";
-
+import { BsFillArrowRightCircleFill } from "react-icons/bs";
 
 /**************************************************
 COMPONENT CODE
 ***************************************************/
+const UserFormButton = () => {
+    const handleRedirect = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        window.open('https://app.sloane.biz/userform', '_blank');
+    };
 
-
-
+    return (
+        <Button2 
+            title="GET STARTED"
+            icon={<BsFillArrowRightCircleFill size={24} />}
+            textColor="text-brand-green"
+            textHoverColor="hover:text-brand-green"
+            backgroundColor="bg-brand-logo"
+            hoverBG="hover:bg-brand-cream"
+            onClick={handleRedirect}
+        />
+    );
+};
 
 /**************************************************
 RENDER COMPONENT
 ***************************************************/
-export default function Section7Quote() {
+export default function Section9Cost() {
     return (
         <section className="w-full bg-brand-cream pt-12 md:pt-16">
             <div className="flex flex-col justify-center items-center">
@@ -45,13 +61,7 @@ export default function Section7Quote() {
                             <Heading2 className="text-center text-brand-logo">
                                 Yes, We&apos;re THAT Affordable
                             </Heading2>
-                            <Button2 
-                                title="Get Started"
-                                textColor="text-brand-green"
-                                textHoverColor="hover:text-brand-logo"
-                                backgroundColor="bg-brand-logo"
-                                hoverBG="hover:bg-brand-green"
-                            />
+                            <UserFormButton />
                         </div>
                     </div>
                 </div>

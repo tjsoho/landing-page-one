@@ -1,90 +1,55 @@
+'use client';
+
 /**************************************************
     IMPORTS
 ***************************************************/
 import React from 'react';
-import Link from 'next/link';
 
 /**************************************************
     TYPES & INTERFACES
 ***************************************************/
-interface ButtonProps {
-  title: string;
-  icon?: React.ReactNode;
-  textColor: string;
-  textHoverColor: string;
-  backgroundColor: string;
-  hoverBG: string;
-  onClick?: () => void;
-  path?: string;
-  borderColor?: string;
-  className?: string;
-  ariaLabel?: string;
+interface Button2Props {
+    title: string;
+    icon?: React.ReactNode;
+    textColor?: string;
+    textHoverColor?: string;
+    backgroundColor?: string;
+    hoverBG?: string;
+    onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+    className?: string;
+    ariaLabel?: string;
 }
-
-/**************************************************
-    HELPER FUNCTIONS
-***************************************************/
-const getTailwindColor = (color: string): string => {
-  // Add your color mapping logic here if needed
-  return color;
-};
 
 /**************************************************
     COMPONENT CODE
 ***************************************************/
-const Button2: React.FC<ButtonProps> = ({
-  title,
-  icon,
-  textColor,
-  textHoverColor,
-  backgroundColor,
-  hoverBG,
-  onClick,
-  path,
-  className = '',
-  ariaLabel,
-}) => {
-  /**************************************************
-      CONSTANTS & STATES
-  ***************************************************/
-  const defaultTextColor = getTailwindColor(textColor);
-  const hoverTextColor = getTailwindColor(textHoverColor);
-  const bgColor = backgroundColor ? getTailwindColor(backgroundColor) : 'transparent';
-  const bgHoverColor = hoverBG ? getTailwindColor(hoverBG) : bgColor;
+export default function Button2({ 
+    title, 
+    icon, 
+    textColor = '', 
+    textHoverColor = '',
+    backgroundColor = '',
+    hoverBG = '',
+    onClick,
+    className = '',
+    ariaLabel
+}: Button2Props) {
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+        if (onClick) onClick(e);
+    };
 
-  /**************************************************
-      RENDER HELPERS
-  ***************************************************/
-  const buttonContent = (
-    <button
-      className={`flex items-center px-8 md:px-16 py-4 rounded-full uppercase font-Archivo text-2xl shadow-xl hover:shadow-md
-        ${defaultTextColor} ${backgroundColor}
-        ${hoverTextColor} ${bgHoverColor}
-        transition-all duration-300 ${className}`}
-      onClick={onClick}
-      aria-label={ariaLabel || title}
-    >
-      {title}
-      {icon && <span className="ml-2">{icon}</span>}
-    </button>
-  );
-
-  /**************************************************
-      RENDER
-  ***************************************************/
-  if (path) {
-    return path.startsWith('http') ? (
-      <a href={path} target="_blank" rel="noopener noreferrer" className="inline-block">
-        {buttonContent}
-      </a>
-    ) : (
-      <Link href={path} className="inline-block">
-        {buttonContent}
-      </Link>
+    return (
+        <button 
+            onClick={handleClick}
+            className={`flex items-center px-10  py-4 md:py-4 rounded-full uppercase font-Archivo text-2xl shadow-lg hover:shadow-xl
+                ${textColor} ${backgroundColor}
+                ${textHoverColor} ${hoverBG}
+                transition-all duration-300 ${className}`}
+            type="button"
+            aria-label={ariaLabel || title}
+        >
+            {title}
+            {icon && <span className="mx-2">{icon}</span>}
+        </button>
     );
-  }
-
-  return buttonContent;
-};
-
-export default Button2; 
+} 

@@ -32,38 +32,13 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Lilita+One&display=swap"
           rel="stylesheet"
         />
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </head>
       <body className="flex min-h-screen flex-col font-sans">
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
-
-        {/* Analytics Scripts */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-84X9LBECDG"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-84X9LBECDG');
-          `}
-        </Script>
-
-        <Script id="hotjar" strategy="afterInteractive">
-          {`
-            (function(h,o,t,j,a,r){
-              h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-              h._hjSettings={hjid:5090094,hjsv:6};
-              a=o.getElementsByTagName('head')[0];
-              r=o.createElement('script');r.async=1;
-              r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-              a.appendChild(r);
-            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-          `}
-        </Script>
 
         <Script id="facebook-pixel" strategy="afterInteractive">
           {`
@@ -79,6 +54,12 @@ export default function RootLayout({
             fbq('track', 'PageView');
           `}
         </Script>
+
+        <div 
+          className="calendly-inline-widget" 
+          data-url="https://calendly.com/sloane-bookings/sloane-phone-call"
+          style={{ position: 'fixed', top: '-100%', left: '-100%' }}
+        />
       </body>
     </html>
   );

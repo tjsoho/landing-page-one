@@ -1,21 +1,57 @@
+'use client'
+
 /**************************************************
 IMPORTS
 ***************************************************/
 import Image from 'next/image';
 import { Heading3, Heading5 } from '../ui/Typography';
-
 import Button2 from '../ui/Button2';
+import Script from 'next/script';
 
 /**************************************************
 TYPES & INTERFACES
 ***************************************************/
-// Add any types here
 
 /**************************************************
 COMPONENT CODE
 ***************************************************/
+const CalendlyButton = () => {
+    const openCalendlyModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        
+        // @ts-ignore
+        if (typeof window !== 'undefined' && window.Calendly) {
+            try {
+                // @ts-ignore
+                window.Calendly.initPopupWidget({
+                    url: 'https://calendly.com/sloane-bookings/sloane-phone-call',
+                    prefill: {},
+                    parentElement: document.body,
+                    text: 'Schedule time with me',
+                    color: '#00BF63',
+                    textColor: '#ffffff',
+                    branding: true
+                });
+            } catch (error) {
+                console.error('Calendly error:', error);
+                window.open('https://calendly.com/sloane-bookings/sloane-phone-call', '_blank');
+            }
+        } else {
+            window.open('https://calendly.com/sloane-bookings/sloane-phone-call', '_blank');
+        }
+    };
 
-
+    return (
+        <Button2 
+            title="Book a 15 Min Call"
+            textColor="text-brand-green"
+            textHoverColor="hover:text-brand-green"
+            backgroundColor="bg-brand-logo"
+            hoverBG="hover:bg-brand-cream"
+            onClick={openCalendlyModal}
+        />
+    );
+};
 
 /**************************************************
 RENDER COMPONENT
@@ -23,6 +59,17 @@ RENDER COMPONENT
 export default function Section6Founders() {
     return (
         <section className="w-full pt-16 bg-brand-green">
+            <Script
+                src="https://assets.calendly.com/assets/external/widget.js"
+                strategy="lazyOnload"
+                onLoad={() => {
+                    console.log('Calendly script loaded');
+                }}
+                onError={(e) => {
+                    console.error('Calendly script error:', e);
+                }}
+            />
+            
             <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row justify-center items-center">
                 
                 {/**************************         LEFT SECTION *************************************/}
@@ -49,16 +96,10 @@ export default function Section6Founders() {
                             Curious if Sloane is right for you?<br></br>
                             Let&apos;s figure it out together
                         </Heading5>
-                        <Button2 
-                            title="Book a 15 Min Call"
-                            textColor="text-brand-green"
-                            textHoverColor="hover:text-brand-logo"
-                            backgroundColor="bg-brand-logo"
-                            hoverBG="hover:bg-brand-green"
-                        />
+                        <CalendlyButton />
                     </div>
                 </div>
             </div>
         </section>
-);
+    );
 } 

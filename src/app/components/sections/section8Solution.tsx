@@ -1,28 +1,40 @@
+'use client'
+
 /**************************************************
 IMPORTS
 ***************************************************/
 import { Heading3, Heading2, Heading4, BodyText } from '../ui/Typography';
 import Button2 from '../ui/Button2';
 import { FaTimes, FaCheck } from 'react-icons/fa';
+import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 
 /**************************************************
 COMPONENT CODE
 ***************************************************/
+const UserFormButton = () => {
+    const handleRedirect = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+        window.open('https://app.sloane.biz/userform', '_blank');
+    };
+
+    return (
+        <Button2 
+            title="Get Started"
+            icon={<BsFillArrowRightCircleFill size={24} />}
+            textColor="text-brand-green"
+            textHoverColor="hover:text-brand-green"
+            backgroundColor="bg-brand-logo"
+            hoverBG="hover:bg-brand-cream"
+            onClick={handleRedirect}
+        />
+    );
+};
+
 const ComparisonTable = () => {
     const features = [
         {
-            name: 'Generic Responses',
-            chatgpt: true,    // true for tick, false for cross
-            sloane: false
-        },
-        {
-            name: 'Quick Responses',
-            chatgpt: true,
-            sloane: true
-        },
-        {
-            name: 'Accessibility',
-            chatgpt: true,
+            name: 'Responses that sound like YOU!',
+            chatgpt: false,    // true for tick, false for cross
             sloane: true
         },
         {
@@ -53,6 +65,16 @@ const ComparisonTable = () => {
         {
             name: 'Continuous Updates as per user request',
             chatgpt: false,
+            sloane: true
+        },
+        {
+            name: 'Quick Responses',
+            chatgpt: true,
+            sloane: true
+        },
+        {
+            name: 'Accessibility',
+            chatgpt: true,
             sloane: true
         },
     ];
@@ -125,13 +147,7 @@ export default function Section8Solution() {
                 </div>
                 {/* CTA Button */}
                 <div className="max-w-[1440px] mx-auto flex justify-center mt-12 px-4">
-                    <Button2 
-                        title="Get Started"
-                        textColor="text-brand-green"
-                        textHoverColor="hover:text-brand-logo"
-                        backgroundColor="bg-brand-logo"
-                        hoverBG="hover:bg-brand-green"
-                    />
+                    <UserFormButton />
                 </div>
             </div>
         </section>

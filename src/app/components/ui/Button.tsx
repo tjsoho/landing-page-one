@@ -1,3 +1,5 @@
+'use client'
+
 /**************************************************
     IMPORTS
 ***************************************************/
@@ -14,7 +16,7 @@ interface ButtonProps {
   textHoverColor: string;
   backgroundColor: string;
   hoverBG: string;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   path?: string;
   borderColor?: string;
   className?: string;
@@ -25,7 +27,6 @@ interface ButtonProps {
     HELPER FUNCTIONS
 ***************************************************/
 const getTailwindColor = (color: string): string => {
-  // Add your color mapping logic here if needed
   return color;
 };
 
