@@ -1,7 +1,7 @@
 export const FB_PIXEL_ID = process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID
 
 // Remove development check and just set domain
-const domain = 'sloane.biz'
+const domain = 'sloaneai.com'
 
 export const pageview = () => {
   if (typeof window !== 'undefined' && window.location.hostname === domain) {
