@@ -7,6 +7,8 @@ import { Heading3, Heading2, Heading4, BodyText } from '../ui/Typography';
 import Button2 from '../ui/Button2';
 import { FaTimes, FaCheck } from 'react-icons/fa';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
+import * as fbq from '../../utils/fpixel';
+
 
 /**************************************************
 COMPONENT CODE
@@ -14,6 +16,11 @@ COMPONENT CODE
 const UserFormButton = () => {
     const handleRedirect = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        fbq.event('initiate_checkout', {
+        content_name: 'Get Started Click',
+        content_category: 'solution section',
+        location: 'section_8_hero',
+    });
         window.open('https://app.sloane.biz/userform', '_blank');
     };
 

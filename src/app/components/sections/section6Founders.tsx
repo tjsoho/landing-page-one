@@ -7,6 +7,8 @@ import Image from 'next/image';
 import { Heading3, Heading5 } from '../ui/Typography';
 import Button2 from '../ui/Button2';
 import Script from 'next/script';
+import * as fbq from '../../utils/fpixel';
+
 
 /**************************************************
 TYPES & INTERFACES
@@ -18,6 +20,11 @@ COMPONENT CODE
 const CalendlyButton = () => {
     const openCalendlyModal = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        fbq.event('initiate_checkout', {
+        content_name: 'Get Started Click',
+        content_category: 'cost section',
+        location: 'section_9_hero',
+    });
         
         // @ts-expect-error Calendly is added via external script
         if (typeof window !== 'undefined' && window.Calendly) {

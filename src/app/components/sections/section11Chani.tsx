@@ -7,6 +7,8 @@ import { Heading2, SmallText } from "../ui/Typography";
 import Image from 'next/image';
 import Button2 from '../ui/Button2';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
+import * as fbq from '../../utils/fpixel';
+
 /**************************************************
     TYPES & INTERFACES
 ***************************************************/
@@ -17,6 +19,11 @@ import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 const UserFormButton = () => {
     const handleRedirect = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        fbq.event('initiate_checkout', {
+        content_name: 'Get Started Click',
+        content_category: 'chani section',
+        location: 'section_11_chani',
+    });
         window.open('https://app.sloane.biz/userform', '_blank');
     };
 

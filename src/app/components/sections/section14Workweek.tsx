@@ -6,6 +6,8 @@
 import { Heading2, Heading4 } from '../ui/Typography';
 import Button2 from '../ui/Button2';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
+import * as fbq from '../../utils/fpixel';
+
 
 /**************************************************
     COMPONENT CODE
@@ -13,6 +15,11 @@ import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 const UserFormButton = () => {
     const handleRedirect = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+         fbq.event('initiate_checkout', {
+        content_name: 'Get Started Click',
+        content_category: 'work week section',
+        location: 'section_14_workweek',
+    });
         window.open('https://app.sloane.biz/userform', '_blank');
     };
 

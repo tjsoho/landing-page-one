@@ -9,12 +9,19 @@ import { BodyText, Heading2, Heading3 } from "../ui/Typography";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import Button2 from "../ui/Button2";
 import Script from 'next/script';
+import * as fbq from '../../utils/fpixel';
+
 
 /**************************************************
     COMPONENT CODE
 ***************************************************/
 const CalendlyButton = () => {
     const openCalendlyModal = (e: React.MouseEvent<HTMLButtonElement>) => {
+        fbq.event('initiate_checkout', {
+        content_name: 'Book Call',
+        content_category: 'section question',
+        location: 'section_2_question',
+    });
         e.preventDefault();
         
         // @ts-expect-error Calendly is added via external script

@@ -6,6 +6,8 @@ IMPORTS
 import Button2 from "../ui/Button2";
 import { Heading1, Heading2 } from "../ui/Typography";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
+import * as fbq from '../../utils/fpixel';
+
 
 /**************************************************
 COMPONENT CODE
@@ -13,6 +15,11 @@ COMPONENT CODE
 const UserFormButton = () => {
     const handleRedirect = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        fbq.event('initiate_checkout', {
+        content_name: 'Get Started Click',
+        content_category: 'cost section',
+        location: 'section_9_hero',
+    });
         window.open('https://app.sloane.biz/userform', '_blank');
     };
 
