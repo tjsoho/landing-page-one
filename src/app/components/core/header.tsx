@@ -14,10 +14,12 @@ import * as fbq from '../../utils/fpixel';
 const UserFormButton = () => {
     const handleRedirect = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        fbq.event('initiate_checkout', {
+        fbq.event('Purchase', {
         content_name: 'Get Started Click',
         content_category: 'purchase',
         location: 'desktop_header',
+        value:79,
+        currency:'AUD',
     });
         window.open('https://app.sloane.biz/userform', '_blank');
     };
