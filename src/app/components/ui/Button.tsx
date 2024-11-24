@@ -4,7 +4,6 @@
     IMPORTS
 ***************************************************/
 import React from 'react';
-import Link from 'next/link';
 
 /**************************************************
     TYPES & INTERFACES
@@ -21,6 +20,7 @@ interface ButtonProps {
   borderColor?: string;
   className?: string;
   ariaLabel?: string;
+  
 }
 
 /**************************************************
@@ -74,14 +74,14 @@ const Button: React.FC<ButtonProps> = ({
       RENDER
   ***************************************************/
   if (path) {
-    return path.startsWith('http') ? (
-      <a href={path} target="_blank" rel="noopener noreferrer" className="inline-block">
+    return (
+      <a 
+        href={path} 
+        target="_self"
+        className="inline-block"
+      >
         {buttonContent}
       </a>
-    ) : (
-      <Link href={path} className="inline-block">
-        {buttonContent}
-      </Link>
     );
   }
 

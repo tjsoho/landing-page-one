@@ -33,7 +33,7 @@ const UserFormButton = () => {
 
     return (
         <Button2 
-            title="YES LET'S DO THIS"
+            title="GET STARTED"
             icon={<BsFillArrowRightCircleFill size={24} />}
             textColor="text-brand-green"
             textHoverColor="hover:text-brand-green"

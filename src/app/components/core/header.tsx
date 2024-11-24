@@ -26,13 +26,13 @@ const UserFormButton = () => {
 
     return (
         <Button 
-            title="GET STARTED"
-            textColor="text-brand-green"
-            textHoverColor="hover:text-brand-green"
-            backgroundColor="bg-brand-cream"
-            hoverBG="hover:bg-brand-logo"
-            onClick={handleRedirect}
-        />
+        title="GET STARTED"
+        textColor="text-brand-green"
+        textHoverColor="hover:text-brand-green"
+        backgroundColor="bg-brand-cream"
+        hoverBG="hover:bg-brand-logo"
+        onClick={handleRedirect}
+    />
     );
 };
 
