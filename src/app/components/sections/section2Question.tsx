@@ -78,6 +78,12 @@ export default function Section2Question() {
 
             {/***************************          GREEN BOX       ******************************************/ }
             <div className="pr-8 md:pr-32">
+                    <div className="flex flex-col items-center justify-center w-full">
+                        <Heading2 className="text-brand-green pb-8 text-center text-4xl font-archivo">Wondeing if Ai could <br></br>Help You in your Business?<br></br>Book a call and let&apos;s have a chat! </Heading2>
+                        <div className="mt-8 mb-12 flex justify-center items-center w-full">
+                            <CalendlyButton />
+                        </div>
+                    </div>
                 <div className="bg-brand-green w-full py-8 md:py-16 flex items-center rounded-r-[30px] px-8 md:px-16 ">
                     <div className="w-full ">
                         <div className="max-w-[1440px] mx-auto border-white">
@@ -107,7 +113,7 @@ export default function Section2Question() {
                         
                         <div className="max-w-[1440px] mx-auto mt-16">
                             <div className="flex justify-start items-center ">   
-                                <Heading2 className="text-left text-4xl font-archivo text-brand-green">Then <span className="text-brand-green  px-6 pb-2 pt-3 underline">Sloane</span> is for you.</Heading2>
+                                <Heading2 className="text-left text-4xl font-archivo text-brand-green">Then Sloane is for you.</Heading2>
                             </div>
                             <div className="mt-8 text-brand-green flex flex-col gap-4 mb-8">
                                 <BodyText>Welcome to Your First Step to Effortless AI. </BodyText>

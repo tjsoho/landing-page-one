@@ -147,7 +147,7 @@ export default function Section8Solution() {
                 {/* Comparison Table with full-width background */}
                 <div className='w-full pr-6 md:pr-16'>
                     <div className='w-full bg-brand-logo rounded-r-2xl'>
-                        <div className='max-w-[1440px] mx-auto px-8'>
+                        <div className='max-w-[1440px] mx-auto px-8 '>
                             <ComparisonTable />
                         </div>
                     </div>
