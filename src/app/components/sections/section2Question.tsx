@@ -79,7 +79,7 @@ export default function Section2Question() {
             {/***************************          GREEN BOX       ******************************************/ }
             <div className="pr-8 md:pr-32">
                     <div className="flex flex-col items-center justify-center w-full">
-                        <Heading2 className="text-brand-green pb-8 text-center text-4xl font-archivo">Wondeing if Ai could <br></br>Help You in your Business?<br></br>Book a call and let&apos;s have a chat! </Heading2>
+                        <Heading2 className="text-brand-green pb-8 text-center text-4xl font-archivo">Wondering if Ai could <br></br>Help You in your Business?<br></br>Book a call and let&apos;s have a chat! </Heading2>
                         <div className="mt-8 mb-12 flex justify-center items-center w-full">
                             <CalendlyButton />
                         </div>
